@@ -31,10 +31,10 @@
        
        /* Background wrapper com animações */
        .background-wrapper {
-           min-height: 100vh;
-           height: 100vh;
            background: var(--primary-gradient);
            padding: 20px;
+           min-height: 100vh;
+           height: 100vh;
            position: relative;
            overflow: hidden;
            animation: backgroundShift 20s ease-in-out infinite;
@@ -116,34 +116,36 @@
            75% { transform: translateY(-20px) rotate(270deg) scale(1.05); }
        }
        
-       /* Container principal */
+       /* Container principal otimizado */
        .container {
            height: 100vh;
            max-width: 1200px;
            margin: 0 auto;
-           padding: 1rem;
+           padding: 0.75rem;
            font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
            position: relative;
            z-index: 1;
            display: flex;
            flex-direction: column;
            overflow: hidden;
+           box-sizing: border-box;
        }
        
-       /* Cabeçalho moderno */
+       /* Cabeçalho moderno otimizado */
        .header {
            text-align: center;
-           margin-bottom: 2rem;
+           margin-bottom: 1rem;
            color: var(--text-light);
            flex-shrink: 0;
+           padding: 0.5rem 0;
        }
        
        .logo-container {
            display: flex;
            align-items: center;
            justify-content: center;
-           gap: 1rem;
-           margin-bottom: 1rem;
+           gap: 0.75rem;
+           margin-bottom: 0.5rem;
            animation: fadeInUp 1s ease-out;
        }
        
@@ -182,7 +184,7 @@
        }
        
        .title {
-           font-size: 2.8rem;
+           font-size: 2.2rem;
            font-weight: 800;
            margin: 0;
            background: linear-gradient(135deg, #fff 0%, #e2e8f0 100%);
@@ -192,6 +194,7 @@
            text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
            letter-spacing: -0.02em;
            position: relative;
+           line-height: 1.1;
        }
        
        .title-underline {
@@ -243,9 +246,9 @@
            }
        }
        
-       /* Seção do input revolucionária */
+       /* Seção do input revolucionária otimizada */
        .input-section {
-           margin-bottom: 2rem;
+           margin-bottom: 1rem;
            display: flex;
            justify-content: center;
            animation: fadeInUp 1s ease-out 0.6s both;
@@ -259,13 +262,13 @@
            max-width: 600px;
        }
        
-       /* Container principal do formulário */
+       /* Container principal do formulário otimizado */
        .form-container {
            position: relative;
            z-index: 5;
            display: flex;
            flex-direction: column;
-           gap: 1.5rem;
+           gap: 1rem;
        }
        
        /* Seção do input de nome */
@@ -674,11 +677,11 @@
            backdrop-filter: blur(25px);
            transition: all 0.6s cubic-bezier(0.4, 0, 0.2, 1);
            overflow: hidden;
-           padding: 1.25rem;
-           min-height: 70px;
+           padding: 1rem;
+           min-height: 60px;
            display: flex;
            align-items: center;
-           gap: 1rem;
+           gap: 0.75rem;
        }
        
        .input-wrapper:hover {
@@ -1204,18 +1207,19 @@
            font-weight: 600;
        }
        
-       /* Seção de resultados */
+       /* Seção de resultados otimizada */
        .results-section {
            display: flex;
            justify-content: center;
            animation: fadeInUp 1s ease-out 0.9s both;
            flex: 1;
            align-items: flex-start;
+           padding-bottom: 0.5rem;
            overflow-y: auto;
-           padding-bottom: 1rem;
+           min-height: 0;
        }
        
-       /* Cards base modernos */
+       /* Cards base modernos otimizados */
        .result-card,
        .error-card,
        .loading-card,
@@ -1224,13 +1228,16 @@
            border: 1px solid rgba(255, 255, 255, 0.2);
            backdrop-filter: blur(20px);
            border-radius: 20px;
-           padding: 1.75rem;
+           padding: 1.25rem;
            box-shadow: var(--shadow-soft);
            width: 100%;
-           max-width: 600px;
+           max-width: 1000px;
            animation: cardSlideIn 0.6s ease-out;
            position: relative;
-           overflow: hidden;
+           margin: 0 auto;
+           max-height: calc(100vh - 320px);
+           overflow-y: auto;
+           box-sizing: border-box;
        }
        
        .result-card::before,
@@ -1267,12 +1274,12 @@
            }
        }
        
-       /* Card headers modernos */
+       /* Card headers modernos otimizados */
        .card-header {
            display: flex;
            align-items: center;
-           gap: 1rem;
-           margin-bottom: 2rem;
+           gap: 0.75rem;
+           margin-bottom: 1rem;
            position: relative;
            z-index: 2;
        }
@@ -1325,7 +1332,7 @@
        
        .name-display {
            text-align: center;
-           margin-bottom: 2rem;
+           margin-bottom: 1rem;
        }
        
        .name-label {
@@ -1351,12 +1358,12 @@
        .age-display {
            display: flex;
            justify-content: center;
-           margin-bottom: 2rem;
+           margin-bottom: 1rem;
        }
        
        .age-circle {
-           width: 120px;
-           height: 120px;
+           width: 100px;
+           height: 100px;
            border-radius: 50%;
            background: linear-gradient(135deg, rgba(255, 255, 255, 0.2), rgba(255, 255, 255, 0.1));
            border: 2px solid rgba(255, 255, 255, 0.3);
@@ -1392,11 +1399,12 @@
        }
        
        .age-number {
-           font-size: 2.5rem;
+           font-size: 2rem;
            font-weight: 900;
            color: white;
            position: relative;
            z-index: 1;
+           line-height: 1;
        }
        
        .age-text {
@@ -1407,12 +1415,12 @@
            z-index: 1;
        }
        
-       /* Container de estatísticas */
+       /* Container de estatísticas otimizado */
        .stats-container {
            display: grid;
-           grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-           gap: 1rem;
-           margin-bottom: 2rem;
+           grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+           gap: 0.75rem;
+           margin-bottom: 1rem;
        }
        
        .stat-item {
@@ -1765,122 +1773,52 @@
            text-align: center;
        }
        
-       /* Responsividade avançada */
+       /* Responsividade perfeita para 100vh */
        @media (max-width: 1024px) {
            .container {
-               padding: 0.75rem;
+               padding: 0.5rem;
+               height: 100vh;
            }
            
            .header {
-               margin-bottom: 1.5rem;
+               margin-bottom: 0.75rem;
+               padding: 0.25rem 0;
            }
            
            .logo-container {
-               flex-direction: column;
-               gap: 0.75rem;
-               margin-bottom: 0.75rem;
+               gap: 0.5rem;
+               margin-bottom: 0.25rem;
            }
            
            .title {
-               font-size: 2.5rem;
-           }
-           
-           .input-container {
-               max-width: 550px;
-           }
-           
-           .form-container {
-               gap: 1.25rem;
-           }
-           
-           .external-label {
-               font-size: 0.95rem;
-               margin-bottom: 0.5rem;
-           }
-           
-           .country-label {
-               font-size: 0.85rem;
-               margin-bottom: 0.6rem;
-           }
-           
-           .country-label span {
-               padding: 0.4rem 0.8rem;
-               font-size: 0.8rem;
-           }
-           
-           .dropdown-header {
-               padding: 0.875rem 1rem;
-               border-radius: 18px;
-               min-height: 50px;
-           }
-           
-           .selected-country {
-               font-size: 0.9rem;
-           }
-           
-           .dropdown-menu {
-               max-height: 200px;
-               border-radius: 12px;
-           }
-           
-           .dropdown-item {
-               padding: 0.65rem 1rem;
-               font-size: 0.85rem;
-           }
-           
-           .input-stats {
-               gap: 1rem;
-           }
-           
-           .result-card,
-           .error-card,
-           .loading-card,
-           .welcome-card {
-               padding: 1.5rem;
-           }
-       }
-       
-       @media (max-width: 768px) {
-           .container {
-               padding: 0.5rem;
-           }
-           
-           .header {
-               margin-bottom: 1rem;
-           }
-           
-           .title {
-               font-size: 2.2rem;
+               font-size: 1.8rem;
+               line-height: 1;
            }
            
            .subtitle {
-               font-size: 1rem;
+               font-size: 0.9rem;
            }
            
            .input-section {
-               margin-bottom: 1.5rem;
-           }
-           
-           .input-container {
-               max-width: 100%;
+               margin-bottom: 0.75rem;
            }
            
            .form-container {
-               gap: 1rem;
+               gap: 0.75rem;
            }
            
            .external-label {
-               font-size: 0.9rem;
-               margin-bottom: 0.5rem;
+               font-size: 0.85rem;
+               margin-bottom: 0.4rem;
            }
            
            .country-label {
                font-size: 0.8rem;
-               margin-bottom: 0.5rem;
+               margin-bottom: 0.4rem;
            }
            
            .country-label span {
-               padding: 0.35rem 0.7rem;
+               padding: 0.3rem 0.6rem;
                font-size: 0.75rem;
            }
            
@@ -1895,264 +1833,41 @@
            }
            
            .dropdown-menu {
-               max-height: 180px;
+               max-height: 160px;
                border-radius: 10px;
            }
            
            .dropdown-item {
-               padding: 0.6rem 0.875rem;
+               padding: 0.55rem 0.875rem;
                font-size: 0.8rem;
            }
            
            .input-wrapper {
-               padding: 1rem;
-               min-height: 60px;
+               padding: 0.75rem;
+               min-height: 50px;
+               gap: 0.5rem;
            }
            
            .input-icon-container {
-               width: 42px;
-               height: 42px;
+               width: 40px;
+               height: 40px;
            }
            
            .input-icon svg {
-               width: 20px;
-               height: 20px;
+               width: 18px;
+               height: 18px;
            }
            
            .name-input {
                font-size: 1rem;
            }
            
-           .input-meta {
-               margin-top: 1rem;
-               gap: 0.75rem;
-           }
-           
-           .input-stats {
-               flex-direction: column;
-               gap: 0.75rem;
-               align-items: center;
-           }
-           
-           .stat-item {
-               padding: 0.5rem 0.75rem;
-               font-size: 0.8rem;
-           }
-           
-           .result-card,
-           .error-card,
-           .loading-card,
-           .welcome-card {
-               padding: 1.25rem;
-           }
-           
-           .stats-container {
-               grid-template-columns: 1fr;
-               gap: 0.75rem;
-           }
-           
-           .features-grid {
-               grid-template-columns: 1fr;
-           }
-           
-           .age-circle {
-               width: 90px;
-               height: 90px;
-           }
-           
-           .age-number {
-               font-size: 1.8rem;
-           }
-       }
-       
-       @media (max-width: 480px) {
-           .container {
-               padding: 0.5rem;
-           }
-           
-           .header {
-               margin-bottom: 0.75rem;
-           }
-           
-           .logo-container {
-               gap: 0.5rem;
-               margin-bottom: 0.5rem;
-           }
-           
-           .logo-icon {
-               width: 40px;
-               height: 40px;
-           }
-           
-           .logo-icon svg {
-               width: 20px;
-               height: 20px;
-           }
-           
-           .title {
-               font-size: 1.8rem;
-           }
-           
-           .subtitle {
-               font-size: 0.9rem;
-           }
-           
-           .input-section {
-               margin-bottom: 1rem;
-           }
-           
-           .form-container {
-               gap: 0.75rem;
-           }
-           
-           .external-label {
-               font-size: 0.85rem;
-               margin-bottom: 0.4rem;
-           }
-           
-           .country-label {
-               font-size: 0.75rem;
-               margin-bottom: 0.4rem;
-           }
-           
-           .country-label span {
-               padding: 0.3rem 0.6rem;
-               font-size: 0.7rem;
-           }
-           
-           .dropdown-header {
-               padding: 0.65rem 0.8rem;
-               border-radius: 12px;
-               min-height: 42px;
-           }
-           
-           .selected-country {
-               font-size: 0.8rem;
-           }
-           
-           .dropdown-menu {
-               max-height: 160px;
-               border-radius: 10px;
-           }
-           
-           .dropdown-item {
-               padding: 0.5rem 0.8rem;
-               font-size: 0.75rem;
-           }
-           
-           .input-wrapper {
-               padding: 0.75rem;
-               min-height: 55px;
-               gap: 0.75rem;
-           }
-           
-           .input-icon-container {
-               width: 36px;
-               height: 36px;
-           }
-           
-           .input-icon svg {
-               width: 16px;
-               height: 16px;
-           }
-           
-           .name-input {
-               font-size: 0.9rem;
-               padding: 0.5rem 0;
-           }
-           
-           .progress-dots {
-               gap: 0.25rem;
-           }
-           
-           .dot {
-               width: 6px;
-               height: 6px;
-           }
-           
-           .input-meta {
-               margin-top: 0.75rem;
-               gap: 0.5rem;
-           }
-           
-           .input-stats {
-               gap: 0.5rem;
-           }
-           
-           .stat-item {
-               padding: 0.4rem 0.6rem;
-               font-size: 0.75rem;
-           }
-           
-           .stat-icon {
-               font-size: 0.9rem;
-           }
-           
-           .input-hint {
-               padding: 0.75rem;
-               flex-direction: column;
-               text-align: center;
-               gap: 0.5rem;
-           }
-           
-           .hint-text {
-               font-size: 0.8rem;
-           }
-           
-           .integrated-typing-indicator {
-               right: 8px;
-               padding: 0.25rem 0.5rem;
-               border-radius: 12px;
-           }
-           
-           .typing-text {
-               font-size: 0.65rem;
-           }
-           
-           .typing-dot {
-               width: 3px;
-               height: 3px;
-           }
-           
-           .progress-bar {
-               height: 3px;
-           }
-           
-           .progress-container {
-               gap: 0.75rem;
-           }
-           
-           .effect-circle {
-               opacity: 0.4;
-           }
-           
-           .input-background-effects {
-               top: -30px;
-               left: -30px;
-               right: -30px;
-               bottom: -30px;
-           }
-           
            .result-card,
            .error-card,
            .loading-card,
            .welcome-card {
                padding: 1rem;
-           }
-           
-           .card-header {
-               flex-direction: column;
-               text-align: center;
-               gap: 0.5rem;
-           }
-           
-           .result-icon {
-               width: 36px;
-               height: 36px;
-           }
-           
-           .result-name {
-               font-size: 1.5rem;
+               max-height: calc(100vh - 280px);
            }
            
            .age-circle {
@@ -2163,15 +1878,259 @@
            .age-number {
                font-size: 1.6rem;
            }
+           
+           .stats-container {
+               grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+               gap: 0.5rem;
+               margin-bottom: 0.75rem;
+           }
        }
        
-       @media (max-width: 360px) {
+       @media (max-width: 768px) {
            .container {
                padding: 0.4rem;
+               height: 100vh;
+           }
+           
+           .header {
+               margin-bottom: 0.5rem;
+               padding: 0.25rem 0;
+           }
+           
+           .logo-container {
+               gap: 0.4rem;
+               margin-bottom: 0.2rem;
+           }
+           
+           .logo-icon {
+               width: 35px;
+               height: 35px;
+           }
+           
+           .logo-icon svg {
+               width: 16px;
+               height: 16px;
            }
            
            .title {
                font-size: 1.6rem;
+               line-height: 1;
+           }
+           
+           .subtitle {
+               font-size: 0.85rem;
+               line-height: 1.2;
+           }
+           
+           .input-section {
+               margin-bottom: 0.5rem;
+           }
+           
+           .form-container {
+               gap: 0.6rem;
+           }
+           
+           .external-label {
+               font-size: 0.8rem;
+               margin-bottom: 0.3rem;
+           }
+           
+           .country-label {
+               font-size: 0.75rem;
+               margin-bottom: 0.3rem;
+           }
+           
+           .country-label span {
+               padding: 0.25rem 0.5rem;
+               font-size: 0.7rem;
+           }
+           
+           .dropdown-header {
+               padding: 0.6rem 0.75rem;
+               border-radius: 12px;
+               min-height: 42px;
+           }
+           
+           .selected-country {
+               font-size: 0.8rem;
+           }
+           
+           .dropdown-menu {
+               max-height: 140px;
+               border-radius: 8px;
+           }
+           
+           .dropdown-item {
+               padding: 0.5rem 0.75rem;
+               font-size: 0.75rem;
+           }
+           
+           .input-wrapper {
+               padding: 0.6rem;
+               min-height: 45px;
+               gap: 0.4rem;
+           }
+           
+           .input-icon-container {
+               width: 32px;
+               height: 32px;
+           }
+           
+           .input-icon svg {
+               width: 14px;
+               height: 14px;
+           }
+           
+           .name-input {
+               font-size: 0.9rem;
+               padding: 0.4rem 0;
+           }
+           
+           .result-card,
+           .error-card,
+           .loading-card,
+           .welcome-card {
+               padding: 0.75rem;
+               max-height: calc(100vh - 240px);
+           }
+           
+           .card-header {
+               gap: 0.5rem;
+               margin-bottom: 0.75rem;
+           }
+           
+           .result-icon {
+               width: 35px;
+               height: 35px;
+           }
+           
+           .result-icon svg {
+               width: 16px;
+               height: 16px;
+           }
+           
+           .card-title {
+               font-size: 1.2rem;
+           }
+           
+           .name-display {
+               margin-bottom: 0.75rem;
+           }
+           
+           .result-name {
+               font-size: 1.4rem;
+               line-height: 1.1;
+           }
+           
+           .age-display {
+               margin-bottom: 0.75rem;
+           }
+           
+           .age-circle {
+               width: 70px;
+               height: 70px;
+           }
+           
+           .age-number {
+               font-size: 1.4rem;
+           }
+           
+           .age-text {
+               font-size: 0.75rem;
+           }
+           
+           .stats-container {
+               grid-template-columns: 1fr;
+               gap: 0.5rem;
+               margin-bottom: 0.75rem;
+           }
+           
+           .stat-item {
+               padding: 0.6rem;
+               gap: 0.6rem;
+           }
+           
+           .stat-icon {
+               font-size: 1.2rem;
+           }
+           
+           .stat-label {
+               font-size: 0.7rem;
+           }
+           
+           .stat-value {
+               font-size: 0.85rem;
+           }
+           
+           .confidence-bar {
+               padding: 1rem;
+           }
+           
+           .confidence-label {
+               font-size: 0.85rem;
+               margin-bottom: 0.75rem;
+           }
+           
+           .confidence-track {
+               height: 6px;
+           }
+           
+           .features-grid {
+               grid-template-columns: 1fr;
+               gap: 0.5rem;
+           }
+           
+           .feature-item {
+               padding: 0.75rem;
+           }
+           
+           .feature-icon {
+               font-size: 1.2rem;
+           }
+           
+           .feature-text {
+               font-size: 0.8rem;
+           }
+       }
+       
+       @media (max-width: 480px) {
+           .container {
+               padding: 0.3rem;
+               height: 100vh;
+           }
+           
+           .header {
+               margin-bottom: 0.4rem;
+               padding: 0.2rem 0;
+           }
+           
+           .logo-container {
+               gap: 0.3rem;
+               margin-bottom: 0.2rem;
+           }
+           
+           .logo-icon {
+               width: 28px;
+               height: 28px;
+           }
+           
+           .logo-icon svg {
+               width: 14px;
+               height: 14px;
+           }
+           
+           .title {
+               font-size: 1.4rem;
+               line-height: 1;
+           }
+           
+           .subtitle {
+               font-size: 0.8rem;
+               line-height: 1.1;
+           }
+           
+           .input-section {
+               margin-bottom: 0.4rem;
            }
            
            .form-container {
@@ -2179,16 +2138,17 @@
            }
            
            .external-label {
-               font-size: 0.8rem;
+               font-size: 0.75rem;
+               margin-bottom: 0.25rem;
            }
            
            .country-label {
                font-size: 0.7rem;
-               margin-bottom: 0.3rem;
+               margin-bottom: 0.25rem;
            }
            
            .country-label span {
-               padding: 0.25rem 0.5rem;
+               padding: 0.2rem 0.4rem;
                font-size: 0.65rem;
            }
            
@@ -2203,7 +2163,7 @@
            }
            
            .dropdown-menu {
-               max-height: 140px;
+               max-height: 120px;
                border-radius: 8px;
            }
            
@@ -2213,68 +2173,337 @@
            }
            
            .input-wrapper {
-               padding: 0.6rem;
-               min-height: 50px;
-           }
-           
-           .integrated-typing-indicator {
-               right: 6px;
-               padding: 0.2rem 0.4rem;
-               border-radius: 10px;
-           }
-           
-           .typing-text {
-               font-size: 0.6rem;
-           }
-           
-           .progress-bar {
-               height: 2px;
-           }
-           
-           .progress-container {
-               gap: 0.5rem;
-           }
-           
-           .particle {
-               width: 2px;
-               height: 2px;
-           }
-           
-           .input-aurora {
-               top: -10px;
-               left: -10px;
-               right: -10px;
-               bottom: -10px;
-           }
-           
-           .input-meta {
-               margin-top: 0.5rem;
-           }
-           
-           .input-stats {
-               flex-direction: column;
-           }
-           
-           .stat-item {
-               width: 100%;
-               justify-content: center;
-               padding: 0.35rem 0.5rem;
-               font-size: 0.7rem;
-           }
-           
-           .input-hint {
                padding: 0.5rem;
+               min-height: 40px;
+               gap: 0.3rem;
            }
            
-           .hint-text {
-               font-size: 0.75rem;
+           .input-icon-container {
+               width: 28px;
+               height: 28px;
+           }
+           
+           .input-icon svg {
+               width: 12px;
+               height: 12px;
+           }
+           
+           .name-input {
+               font-size: 0.85rem;
+               padding: 0.3rem 0;
            }
            
            .result-card,
            .error-card,
            .loading-card,
            .welcome-card {
+               padding: 0.6rem;
+               max-height: calc(100vh - 200px);
+           }
+           
+           .card-header {
+               gap: 0.4rem;
+               margin-bottom: 0.6rem;
+           }
+           
+           .result-icon {
+               width: 28px;
+               height: 28px;
+           }
+           
+           .result-icon svg {
+               width: 12px;
+               height: 12px;
+           }
+           
+           .card-title {
+               font-size: 1rem;
+           }
+           
+           .name-display {
+               margin-bottom: 0.6rem;
+           }
+           
+           .result-name {
+               font-size: 1.2rem;
+               line-height: 1;
+           }
+           
+           .age-display {
+               margin-bottom: 0.6rem;
+           }
+           
+           .age-circle {
+               width: 60px;
+               height: 60px;
+           }
+           
+           .age-number {
+               font-size: 1.2rem;
+           }
+           
+           .age-text {
+               font-size: 0.65rem;
+           }
+           
+           .stats-container {
+               grid-template-columns: 1fr;
+               gap: 0.4rem;
+               margin-bottom: 0.6rem;
+           }
+           
+           .stat-item {
+               padding: 0.5rem;
+               gap: 0.5rem;
+           }
+           
+           .stat-icon {
+               font-size: 1rem;
+           }
+           
+           .stat-label {
+               font-size: 0.65rem;
+           }
+           
+           .stat-value {
+               font-size: 0.8rem;
+           }
+           
+           .confidence-bar {
                padding: 0.75rem;
+           }
+           
+           .confidence-label {
+               font-size: 0.8rem;
+               margin-bottom: 0.6rem;
+           }
+           
+           .confidence-track {
+               height: 5px;
+           }
+           
+           .features-grid {
+               grid-template-columns: 1fr;
+               gap: 0.4rem;
+           }
+           
+           .feature-item {
+               padding: 0.6rem;
+           }
+           
+           .feature-icon {
+               font-size: 1rem;
+           }
+           
+           .feature-text {
+               font-size: 0.75rem;
+           }
+       }
+       
+       @media (max-width: 360px) {
+           .container {
+               padding: 0.25rem;
+               height: 100vh;
+           }
+           
+           .header {
+               margin-bottom: 0.3rem;
+               padding: 0.15rem 0;
+           }
+           
+           .logo-container {
+               gap: 0.25rem;
+               margin-bottom: 0.15rem;
+           }
+           
+           .logo-icon {
+               width: 24px;
+               height: 24px;
+           }
+           
+           .logo-icon svg {
+               width: 12px;
+               height: 12px;
+           }
+           
+           .title {
+               font-size: 1.2rem;
+               line-height: 1;
+           }
+           
+           .subtitle {
+               font-size: 0.7rem;
+               line-height: 1;
+           }
+           
+           .input-section {
+               margin-bottom: 0.3rem;
+           }
+           
+           .form-container {
+               gap: 0.4rem;
+           }
+           
+           .external-label {
+               font-size: 0.7rem;
+               margin-bottom: 0.2rem;
+           }
+           
+           .country-label {
+               font-size: 0.65rem;
+               margin-bottom: 0.2rem;
+           }
+           
+           .country-label span {
+               padding: 0.15rem 0.3rem;
+               font-size: 0.6rem;
+           }
+           
+           .dropdown-header {
+               padding: 0.4rem 0.5rem;
+               border-radius: 8px;
+               min-height: 34px;
+           }
+           
+           .selected-country {
+               font-size: 0.7rem;
+           }
+           
+           .dropdown-menu {
+               max-height: 100px;
+               border-radius: 6px;
+           }
+           
+           .dropdown-item {
+               padding: 0.3rem 0.5rem;
+               font-size: 0.65rem;
+           }
+           
+           .input-wrapper {
+               padding: 0.4rem;
+               min-height: 36px;
+               gap: 0.25rem;
+           }
+           
+           .input-icon-container {
+               width: 24px;
+               height: 24px;
+           }
+           
+           .input-icon svg {
+               width: 10px;
+               height: 10px;
+           }
+           
+           .name-input {
+               font-size: 0.8rem;
+               padding: 0.25rem 0;
+           }
+           
+           .result-card,
+           .error-card,
+           .loading-card,
+           .welcome-card {
+               padding: 0.5rem;
+               max-height: calc(100vh - 170px);
+           }
+           
+           .card-header {
+               gap: 0.3rem;
+               margin-bottom: 0.5rem;
+           }
+           
+           .result-icon {
+               width: 24px;
+               height: 24px;
+           }
+           
+           .result-icon svg {
+               width: 10px;
+               height: 10px;
+           }
+           
+           .card-title {
+               font-size: 0.9rem;
+           }
+           
+           .name-display {
+               margin-bottom: 0.5rem;
+           }
+           
+           .result-name {
+               font-size: 1rem;
+               line-height: 1;
+           }
+           
+           .age-display {
+               margin-bottom: 0.5rem;
+           }
+           
+           .age-circle {
+               width: 50px;
+               height: 50px;
+           }
+           
+           .age-number {
+               font-size: 1rem;
+           }
+           
+           .age-text {
+               font-size: 0.6rem;
+           }
+           
+           .stats-container {
+               grid-template-columns: 1fr;
+               gap: 0.3rem;
+               margin-bottom: 0.5rem;
+           }
+           
+           .stat-item {
+               padding: 0.4rem;
+               gap: 0.4rem;
+           }
+           
+           .stat-icon {
+               font-size: 0.9rem;
+           }
+           
+           .stat-label {
+               font-size: 0.6rem;
+           }
+           
+           .stat-value {
+               font-size: 0.75rem;
+           }
+           
+           .confidence-bar {
+               padding: 0.6rem;
+           }
+           
+           .confidence-label {
+               font-size: 0.75rem;
+               margin-bottom: 0.5rem;
+           }
+           
+           .confidence-track {
+               height: 4px;
+           }
+           
+           .features-grid {
+               grid-template-columns: 1fr;
+               gap: 0.3rem;
+           }
+           
+           .feature-item {
+               padding: 0.5rem;
+           }
+           
+           .feature-icon {
+               font-size: 0.9rem;
+           }
+           
+           .feature-text {
+               font-size: 0.7rem;
            }
        }
        
